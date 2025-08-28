@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Creit Technologies Brand Design System.
+All colors based on company's official brand guidelines.
+*/
+
+@layer base {
+  :root {
+    /* Creit Brand Colors */
+    --creit-primary: 237 82% 63%; /* #555DEE */
+    --creit-secondary: 229 75% 18%; /* #08124d */
+    --creit-navy: 229 75% 18%; /* #08124d */
+    --creit-accent: 24 90% 85%; /* #faccb2 */
+    --creit-accent-light: 24 100% 97%; /* #fef5f0 */
+    
+    /* Gradients */
+    --creit-gradient-main: linear-gradient(135deg, hsl(var(--creit-primary)), hsl(var(--creit-secondary)));
+    --creit-gradient-hero: linear-gradient(135deg, hsl(var(--creit-navy)), hsl(var(--creit-primary)));
+    --creit-gradient-accent: linear-gradient(135deg, hsl(var(--creit-accent-light)), hsl(var(--creit-accent)));
+    
+    /* Shadows */
+    --creit-shadow-glow: 0 20px 60px hsl(var(--creit-primary) / 0.15);
+    --creit-shadow-card: 0 4px 20px hsl(var(--creit-primary) / 0.1);
+    
+    /* Animations */
+    --creit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* System Colors */
+    --background: 0 0% 100%;
+    --foreground: 229 75% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 229 75% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 229 75% 18%;
+
+    --primary: 229 100% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 24 100% 97%;
+    --secondary-foreground: 229 75% 18%;
+
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 24 90% 85%;
+    --accent-foreground: 229 75% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 229 100% 62%;
+
+    --radius: 12px;
+  }
+
+  .dark {
+    --background: 229 75% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 229 75% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 229 75% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 229 100% 62%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 229 50% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 229 30% 20%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 24 90% 25%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 229 30% 20%;
+    --input: 229 30% 20%;
+    --ring: 229 100% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-dm-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom animations for Creit brand */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
