@@ -14,7 +14,7 @@ import {
   Facebook,
   Instagram
 } from "lucide-react";
-import creitLogoMark from "@/assets/creit-logo-mark.png";
+import creitLogoMark from "@/assets/creit-fef4f0.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

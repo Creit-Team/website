@@ -35,7 +35,7 @@ const Hero = () => {
       "
       aria-label="Hero"
     >
-      {/* Background image */}
+      {/* Background image (kept static for performance & layout stability) */}
       <div className="absolute inset-0">
         <img src={consulting} alt="" aria-hidden="true" className="w-full h-full object-cover" />
         {/* Brand veil: deep navy to Creit blue */}
@@ -50,20 +50,21 @@ const Hero = () => {
           <div className="flex min-h-[60vh] lg:min-h-[70vh] items-center">
             <div className="w-full">
               <div className="mx-auto max-w-[780px] text-center">
-                <h1 className="text-creit-accent-light font-extrabold leading-tight tracking-tight text-4xl sm:text-5xl lg:text-6xl">
+                {/* Main headline: anchor of the page — animated (slide-left) */}
+                <h1 className="i-animate slide-left text-creit-accent-light font-extrabold leading-tight tracking-tight text-4xl sm:text-5xl lg:text-6xl">
                   Trusted Solutions
                   <br className="hidden sm:block" />
                   <span className="block">For Business Growth</span>
                 </h1>
 
-                <p className="mt-5 text-white text-base sm:text-lg leading-relaxed">
+                {/* Supporting paragraph: secondary emphasis — animated (slide-right) */}
+                <p className="i-animate slide-right mt-5 text-white text-base sm:text-lg leading-relaxed">
                   Creit Technologies Limited delivers trusted solutions for business growth through software development, digital services, growth solutions, and research.
                   <br />
                 </p>
 
-                {/* CTAs */}
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-
+                {/* CTAs: grouped and animated together (slide-up) */}
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 i-animate slide-up" aria-hidden={false}>
                   <Button
                     variant="outline"
                     size="lg"
@@ -72,7 +73,6 @@ const Hero = () => {
                   >
                     See Services
                   </Button>
-
 
                   <Button
                     size="lg"
@@ -87,7 +87,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Chat launcher*/}
+          {/* Chat launcher — kept static (no animation) to avoid distraction */}
           <button
             aria-label="Open chat"
             className="

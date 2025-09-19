@@ -1,3 +1,7 @@
+// src/pages/Index.tsx  (or src/pages/index.tsx / src/App.tsx depending on your project)
+import ScrollProvider from "@/lib/ScrollProvider";
+import { useAutoReveal } from "@/lib/useAutoReveal";
+
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -7,18 +11,22 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  useAutoReveal("main"); // scope to main so only main's .i-animate are targeted
+
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Academy />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ScrollProvider>
+      <div className="min-h-screen">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <Academy />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ScrollProvider>
   );
 };
 
