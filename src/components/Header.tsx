@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import creitLogo from "@/assets/creit-logo-horizontal.png";
+import ogo from "@/assets/creit-logo-horizontal.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +29,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src={creitLogo} 
+              src={ogo} 
               alt="Creit Technologies Limited" 
               className="h-8 w-auto"
             />
